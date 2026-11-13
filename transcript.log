@@ -1,0 +1,31 @@
+== strategy run (deterministic: positions.csv md5 before/after re-run)
+f7b201698d88e8dac6b65be104fee543  positions.csv
+wrote positions.csv: 1440 rows, long 750, short 660, flat 30
+f7b201698d88e8dac6b65be104fee543  positions.csv
+
+== backtest (default fee 0.10% + slippage 0.02%)
+fee=0.10% slippage=0.02% -> net PnL=109.84 USDT  gross=136.23  costs=26.39  max DD=51.73  fills=6
+  fill @ minute 30: +0 -> -1 @ open 2023.83
+  fill @ minute 225: -1 -> +1 @ open 2010.00
+  fill @ minute 585: +1 -> -1 @ open 2015.27
+  fill @ minute 705: -1 -> +1 @ open 2019.10
+  fill @ minute 735: +1 -> -1 @ open 2013.76
+  fill @ minute 1080: -1 -> +1 @ open 1923.80
+
+== fee sensitivity (slippage 0.02%)
+fee=0.00% slippage=0.02% -> net PnL=131.83 USDT  gross=136.23  costs=4.40  max DD=35.61  fills=6
+fee=0.05% slippage=0.02% -> net PnL=120.84 USDT  gross=136.23  costs=15.39  max DD=43.67  fills=6
+fee=0.10% slippage=0.02% -> net PnL=109.84 USDT  gross=136.23  costs=26.39  max DD=51.73  fills=6
+fee=0.15% slippage=0.02% -> net PnL=98.85 USDT  gross=136.23  costs=37.38  max DD=59.79  fills=6
+fee=0.20% slippage=0.02% -> net PnL=87.86 USDT  gross=136.23  costs=48.37  max DD=67.85  fills=6
+fee=0.30% slippage=0.02% -> net PnL=65.87 USDT  gross=136.23  costs=70.36  max DD=83.96  fills=6
+
+== split-half ==
+bars 0-719: net -4.13 gross +12.81 costs 16.94 max DD 41.84 fills 4
+bars 720-1439: net +111.55 gross +123.42 costs 11.87 max DD 19.74 fills 3
+
+== dataset identity ==
+9f8a16c669100d333b3c11c2bd6d503e  bars.csv
+ 1441 positions.csv
+ 1441 bars.csv
+ 2882 total
